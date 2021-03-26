@@ -11,6 +11,12 @@ export default class TerminalController {
         }
     }
 
+    #registerEvents(eventEmitter, components) {
+        eventEmitter.emit('turma01', 'hey')
+
+        eventEmitter.on('turma01', msg => console.log(msg.toString()))
+    }
+
     async initializeTable(eventEmitter) {
         const components = new ComponentsBuilder()
             .setScreen({ title: 'HackerChat - Thalles Gabriel & Yasmim Cristina' })
