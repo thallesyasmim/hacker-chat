@@ -2,6 +2,7 @@ import blessed from 'blessed'
 
 export default class ComponentsBuilder {
     #screen
+    #layout
 
     constructor() {
 
@@ -24,6 +25,21 @@ export default class ComponentsBuilder {
 
 
     setScreen({ title }) {
+        this.$screen = blessed.screen({
+            smartCSR: true,
+            title
+        })
 
+        return this
+    }
+
+    setLayoutComponent() {
+        this.#layout = blessed.layout({
+            parent: this.#screen,
+            width: '100%',
+            height: '100%'
+        })
+
+        return this
     }
 }
