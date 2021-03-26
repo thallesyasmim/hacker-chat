@@ -67,4 +67,13 @@ export default class ComponentsBuilder {
 
         return this
     }
+
+    build() {
+        const components = {
+            screen: this.#screen,
+            input: this.#input
+        }
+
+        return components
+    }
 }
