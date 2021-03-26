@@ -3,6 +3,7 @@ import blessed from 'blessed'
 export default class ComponentsBuilder {
     #screen
     #layout
+    #input
 
     constructor() {
 
@@ -30,6 +31,8 @@ export default class ComponentsBuilder {
             title
         })
 
+        this.#screen.key(['espace', 'q', 'C-c'], () => process.exit(0))
+
         return this
     }
 
@@ -39,6 +42,28 @@ export default class ComponentsBuilder {
             width: '100%',
             height: '100%'
         })
+
+        return this
+    }
+
+    setInputComponent(onEnterPressed) {
+        const input = blessed.textarea({
+            parent: this.#screen,
+            bottom: 0,
+            height: '10%',
+            inputOnFocus: true,
+            padding: {
+                top: 1,
+                left: 2
+            },
+            style: {
+                fg: '#f6f6f6',
+                bg: '#353535'
+            }
+        })
+
+        input.key('enter', onEnterPressed)
+        this.#input = input
 
         return this
     }
