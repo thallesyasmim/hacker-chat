@@ -26,7 +26,7 @@ export default class ComponentsBuilder {
 
 
     setScreen({ title }) {
-        this.$screen = blessed.screen({
+        this.#screen = blessed.screen({
             smartCSR: true,
             title
         })
