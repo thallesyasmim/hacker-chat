@@ -15,7 +15,7 @@ export default class TerminalController {
         const components = new ComponentsBuilder()
             .setScreen({ title: 'HackerChat - Thalles Gabriel & Yasmim Cristina' })
             .setLayoutComponent()
-            .setInputComponent()
+            .setInputComponent(this.#onInputReceived(eventEmitter))
             .build()
 
         components.input.focus()
