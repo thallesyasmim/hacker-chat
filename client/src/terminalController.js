@@ -3,6 +3,10 @@ import ComponentsBuilder from "./components.js";
 export default class TerminalController {
     constructor() { }
 
+    pickColor() {
+        return `#${((1 << 24) * Math.random() | 0).toString(16)}-fg`
+    }
+
     #onInputReceived(eventEmitter) {
         return function () {
             const message = this.getValue()
@@ -35,9 +39,5 @@ export default class TerminalController {
 
         components.input.focus()
         components.screen.render()
-
-        setInterval(() => {
-            eventEmitter.emit('message:received', { userName: 'Thalles', message: 'Olá' })
-        }, 2000)
     }
 }
