@@ -7,7 +7,7 @@ export default class CliConfig {
 
          this.host = hostname
          this.port = port
-         this.protocol = protocol.replace(':', '')
+         this.protocol = protocol.replace(/\W/, '')
     }
 
     static parseArguments(commands) {
@@ -20,8 +20,6 @@ export default class CliConfig {
             if(!command.includes(commandPrefix)) continue;
             cmd.set(command.replace(commandPrefix, ''), commands[index + 1])
         }
-
-        console.log(typeof cmd)
         return new CliConfig(Object.fromEntries(cmd))
     }
 }
