@@ -46,6 +46,8 @@ export default class TerminalController {
             .setScreen({ title: 'HackerChat - Thalles Gabriel & Yasmim Cristina' })
             .setLayoutComponent()
             .setChatComponent()
+            .setStatusComponent()
+            .setActivityLogComponent()
             .setInputComponent(this.#onInputReceived(eventEmitter))
             .build()
 
