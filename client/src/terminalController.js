@@ -11,10 +11,15 @@ export default class TerminalController {
         }
     }
 
-    #registerEvents(eventEmitter, components) {
-        eventEmitter.emit('turma01', 'hey')
+    #onMessageReceived({ screen, chat }) {
+        return msg => {
+           chat.addItem(`message: ${msg.toString()}`)
+           screen.render()
+        }
+    }
 
-        eventEmitter.on('turma01', msg => console.log(msg.toString()))
+    #registerEvents(eventEmitter, components) {
+        eventEmitter.on('message:received', this.#onMessageReceived(components))
     }
 
     async initializeTable(eventEmitter) {
