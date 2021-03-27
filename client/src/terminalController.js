@@ -37,8 +37,18 @@ export default class TerminalController {
         }
     }
 
+    #onLogChanged({ screen, activityLog }) {
+        return msg => {
+            const [userName] = msg.split(/\s/)
+            const color = this.#getUserColor(userName)
+            activityLog.addItem(`{${color}}{bold}${msg.toString()}{/}`)
+            screen.render()
+        }
+    }
+
     #registerEvents(eventEmitter, components) {
         eventEmitter.on('message:received', this.#onMessageReceived(components))
+        eventEmitter.on('activityLog:updated', this.#onLogChanged(components))
     }
 
     async initializeTable(eventEmitter) {
@@ -57,12 +67,12 @@ export default class TerminalController {
         components.screen.render()
 
         setInterval(() => {
-            eventEmitter.emit('message:received', { userName: 'thalles', message: 'hey' })
-            eventEmitter.emit('message:received', { userName: 'matheus', message: 'opa' })
-            eventEmitter.emit('message:received', { userName: 'flávio', message: 'tudo bem?' })
-            eventEmitter.emit('message:received', { userName: 'lucas', message: 'olá' })
-            eventEmitter.emit('message:received', { userName: 'jp', message: 'iae' })
-            eventEmitter.emit('message:received', { userName: 'vinicius', message: 'de boa?' })
+            eventEmitter.emit('activityLog:updated', 'thalles join')
+            eventEmitter.emit('activityLog:updated', 'matheus join')
+            eventEmitter.emit('activityLog:updated', 'flávio join')
+            eventEmitter.emit('activityLog:updated', 'lucas join')
+            eventEmitter.emit('activityLog:updated', 'jp join')
+            eventEmitter.emit('activityLog:updated', 'vinicius join')
         }, 2000)
     }
 }
