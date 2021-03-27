@@ -104,12 +104,12 @@ export default class ComponentsBuilder {
             parent: this.#layout,
             width: '25%',
             height: '90%',
-            style: {
-                fg: 'yellow'
-            },
             items: [
                 '{bold}Activity Log{/}'
-            ]
+            ],
+            style: {
+                fg: 'yellow'
+            }
         })
 
 
