@@ -1,7 +1,8 @@
 import ComponentsBuilder from "./components.js";
+import { constants } from "./constants.js";
 
 export default class TerminalController {
-    #usersColors = new Map() 
+    #usersColors = new Map()
 
     constructor() { }
 
@@ -10,7 +11,7 @@ export default class TerminalController {
     }
 
     #getUserColor(userName) {
-        if(this.#usersColors.has(userName)) 
+        if (this.#usersColors.has(userName))
             return this.#usersColors.get(userName)
 
         const color = this.#pickColor()
@@ -30,10 +31,10 @@ export default class TerminalController {
 
     #onMessageReceived({ screen, chat }) {
         return msg => {
-           const { userName, message } = msg
-           const color = this.#getUserColor(userName)
-           chat.addItem(`{${color}}{bold}${userName}{/}: ${message}`)
-           screen.render()
+            const { userName, message } = msg
+            const color = this.#getUserColor(userName)
+            chat.addItem(`{${color}}{bold}${userName}{/}: ${message}`)
+            screen.render()
         }
     }
 
@@ -46,9 +47,25 @@ export default class TerminalController {
         }
     }
 
+    #onStatusChanged({ screen, status }) {
+        return users => {
+
+            const { content } = status.items.shift()
+            status.clearItems()
+            status.addItem(content)
+
+            users.forEach(userName => {
+                const color = this.#getUserColor(userName)
+                status.addItem(`{${color}}{bold}${userName}{/}`)
+            })
+            screen.render()
+        }
+    }
+
     #registerEvents(eventEmitter, components) {
-        eventEmitter.on('message:received', this.#onMessageReceived(components))
-        eventEmitter.on('activityLog:updated', this.#onLogChanged(components))
+        eventEmitter.on(constants.events.app.MESSAGE_RECEIVED, this.#onMessageReceived(components))
+        eventEmitter.on(constants.events.app.ACTIVITYLOG_UPDATED, this.#onLogChanged(components))
+        eventEmitter.on(constants.events.app.STATUS_UPDATED, this.#onStatusChanged(components))
     }
 
     async initializeTable(eventEmitter) {
@@ -65,14 +82,5 @@ export default class TerminalController {
 
         components.input.focus()
         components.screen.render()
-
-        setInterval(() => {
-            eventEmitter.emit('activityLog:updated', 'thalles join')
-            eventEmitter.emit('activityLog:updated', 'matheus join')
-            eventEmitter.emit('activityLog:updated', 'flávio join')
-            eventEmitter.emit('activityLog:updated', 'lucas join')
-            eventEmitter.emit('activityLog:updated', 'jp join')
-            eventEmitter.emit('activityLog:updated', 'vinicius join')
-        }, 2000)
     }
 }
