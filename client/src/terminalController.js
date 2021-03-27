@@ -31,7 +31,8 @@ export default class TerminalController {
     #onMessageReceived({ screen, chat }) {
         return msg => {
            const { userName, message } = msg
-           chat.addItem(`{bold}${userName}{/}: ${message}`)
+           const color = this.#getUserColor(userName)
+           chat.addItem(`{${color}}{bold}${userName}{/}: ${message}`)
            screen.render()
         }
     }
@@ -52,5 +53,14 @@ export default class TerminalController {
 
         components.input.focus()
         components.screen.render()
+
+        setInterval(() => {
+            eventEmitter.emit('message:received', { userName: 'thalles', message: 'hey' })
+            eventEmitter.emit('message:received', { userName: 'matheus', message: 'opa' })
+            eventEmitter.emit('message:received', { userName: 'flávio', message: 'tudo bem?' })
+            eventEmitter.emit('message:received', { userName: 'lucas', message: 'olá' })
+            eventEmitter.emit('message:received', { userName: 'jp', message: 'iae' })
+            eventEmitter.emit('message:received', { userName: 'vinicius', message: 'de boa?' })
+        }, 2000)
     }
 }
