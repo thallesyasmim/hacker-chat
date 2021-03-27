@@ -13,7 +13,8 @@ export default class TerminalController {
 
     #onMessageReceived({ screen, chat }) {
         return msg => {
-           chat.addItem(`message: ${msg.toString()}`)
+           const { userName, message } = msg
+           chat.addItem(`{bold}${userName}{/}: ${message}`)
            screen.render()
         }
     }
@@ -30,7 +31,13 @@ export default class TerminalController {
             .setInputComponent(this.#onInputReceived(eventEmitter))
             .build()
 
+        this.#registerEvents(eventEmitter, components)
+
         components.input.focus()
         components.screen.render()
+
+        setInterval(() => {
+            eventEmitter.emit('message:received', { userName: 'Thalles', message: 'Olá' })
+        }, 2000)
     }
 }
