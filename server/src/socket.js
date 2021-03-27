@@ -1,4 +1,3 @@
-import { rejects } from 'assert'
 import http from 'http'
 
 export default class SocketServer {
