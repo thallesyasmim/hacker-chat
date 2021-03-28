@@ -20,19 +20,37 @@ export default class Controller {
     }
 
     async joinRoom(socketId, data) {
-        const userData = JSON.parse(data)
-        console.log(`${userData} joined!`[socketId])
+        const userData = data
+        console.log(`${userData.userName} joined! ${socketId}`)
         const { roomId } = userData
-        const users = this.#joinUserOnRoom(roomId, userData)
+        const user = this.#updateGlobalUserData(socketId, userData)
+
+        const users = this.#joinUserOnRoom(roomId, user)
 
 
 
         const currentUsers = Array.from(users.values())
             .map(({ id, userName }) => ({ userName, id }))
 
-        this.socketServer.sendMessage(userData.socket, constants.event.UPDATE_USERS, currentUsers)
+        this.socketServer.sendMessage(user.socket, constants.event.UPDATE_USERS, currentUsers)
 
-        const user = this.#updateGlobalUserData(socketId, userData)
+        this.broadCast({
+            socketId,
+            roomId,
+            message: { id: socketId, userName: userData.userName },
+            event: constants.event.NEW_USER_CONNECTED
+        })
+
+    }
+
+    broadCast({ socketId, roomId, event, message, includeCurrentSocket = false }) {
+        const usersOnRoom = this.#rooms.get(roomId)
+
+        for(const [key, user] of usersOnRoom) {
+            if(!includeCurrentSocket && key === socketId) continue;
+
+            this.socketServer.sendMessage(user.socket, event, message)
+        }
     }
 
     #joinUserOnRoom(roomId, user) {
@@ -49,7 +67,7 @@ export default class Controller {
                 const { event, message } = JSON.parse(data)
                 this[event](id, message)
             } catch (error) {
-                console.error(`wrong event format!!!`, data.toString())
+                console.error(`wrong event format!!!`,  data.toString())
             }
         }
     }
