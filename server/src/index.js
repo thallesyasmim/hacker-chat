@@ -1,5 +1,6 @@
 import SocketServer from "./socket.js";
 import Event from 'events'
+import Controller from "./controller.js";
 import { constants } from "./constants.js";
 
 
@@ -10,6 +11,9 @@ const socketServer = new SocketServer({ port })
 const server = await socketServer.initialize(eventEmitter)
 console.log('socket server is running at', server.address().port)
 
+const controller = new Controller({ socketServer })
+
+eventEmitter.on(constants.event.NEW_USER_CONNECTED, controller.onNewConnection.bind(controller))
 /*
 eventEmitter.on(constants.event.NEW_USER_CONNECTED, (socket) => {
     console.log('new connection!!', socket.id)
