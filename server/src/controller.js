@@ -21,13 +21,18 @@ export default class Controller {
 
     async joinRoom(socketId, data) {
         const userData = JSON.parse(data)
-        console.log(`${userData} joined!` [socketId])
+        console.log(`${userData} joined!`[socketId])
         const { roomId } = userData
         const users = this.#joinUserOnRoom(roomId, userData)
 
+
+
+        const currentUsers = Array.from(users.values())
+            .map(({ id, userName }) => ({ userName, id }))
+
+        this.socketServer.sendMessage(userData.socket, constants.event.UPDATE_USERS, currentUsers)
+
         const user = this.#updateGlobalUserData(socketId, userData)
-
-
     }
 
     #joinUserOnRoom(roomId, user) {
@@ -36,21 +41,24 @@ export default class Controller {
         this.#rooms.set(roomId, usersOnRoom)
 
         return usersOnRoom
-    } 
+    }
 
     #onSocketData(id) {
         return data => {
-            console.log('onSocketData', data.toString())
-
-
+            try {
+                const { event, message } = JSON.parse(data)
+                this[event](id, message)
+            } catch (error) {
+                console.error(`wrong event format!!!`, data.toString())
+            }
         }
     }
 
     #onSocketClosed(id) {
         return data => {
-            console.log('onSocketClosed', data.toString())
+            console.log('onSocketClosed', id)
 
-            
+
         }
     }
 
