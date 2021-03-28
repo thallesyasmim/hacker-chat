@@ -84,7 +84,7 @@ export default class Controller {
         return _ => {
             const { userName, roomId } = this.#users.get(id)
             console.log('disconnected', userName, id)
-
+            this.#logoutUser(id, roomId)
             this.broadCast({
                 roomId,
                 message: { id, userName },
