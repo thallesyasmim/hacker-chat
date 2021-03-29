@@ -1,9 +1,12 @@
 {
-  "name": "client",
+  "name": "@thallesyasmim/hacker-chat-client",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
+  "bin": {
+    "hacker-chat": "index.js"
+  },
   "scripts": {
     "user01": "node index.js --username thalles --room sala01 --hostUri http://localhost:9898",
     "user02": "node index.js --username yasmim --room sala01 --hostUri http://localhost:9898",
@@ -14,7 +17,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "thallesyasmim",
   "license": "ISC",
   "dependencies": {
     "blessed": "^0.1.81"
