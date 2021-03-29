@@ -37,6 +37,10 @@ export default class EventManager {
         this.#updateUsersComponent()
     }
 
+    message(message) {
+        this.#emitComponentUpdate(constants.events.app.MESSAGE_RECEIVED, message)
+    }
+
     #emitComponentUpdate(event, message) {
         this.componentEmitter.emit(event, message)
     }
