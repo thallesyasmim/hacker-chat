@@ -4,10 +4,13 @@
 npm i -g @thallesyasmim/hacker-chat-client
 npm unlink -g @thallesyasmim/hacker-chat-client
 
+
+
     chmod +x index.js
     npm link
     npm login
     npm publish --access public
+    npm unpublish --force
 
 hacker-chat \
     --username erickwendel \
