@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img alt="design do projeto" width="650px" src="./.github/hacker_chat.PNG" />
+  <img alt="design do projeto" src="./.github/hacker_chat.PNG" />
 <p>
 
 ## :bookmark: Sobre
