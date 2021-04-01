@@ -32,7 +32,7 @@ Essa aplicação foi realizada durante a Semana **JS Expert 3.0**, com [Erick We
 
   - É **necessário** possuir o **[Node.js](https://nodejs.org/en/)** instalado no computador
   - É **necessário** possuir o **[Git](https://git-scm.com/)** instalado e configurado no computador
-  - Também, é **preciso** ter um gerenciador de pacotes seja o **[NPM](https://www.npmjs.com/)** ou **[Yarn](https://yarnpkg.com/)**.
+  - Também, é **preciso** ter um gerenciador de pacotes como o **[NPM](https://www.npmjs.com/)**.
 
 1. Faça um clone do repositório:
 
@@ -46,17 +46,16 @@ Essa aplicação foi realizada durante a Semana **JS Expert 3.0**, com [Erick We
   # Servidor
   $ cd server
   # Instalando as dependências do projeto.
-  $ npm install # ou yarn 
+  $ npm install # 
   # Inicie o servidor
-  $ npm run dev # ou yarn dev
+  $ npm run dev # 
 
   # Cliente
   $ cd client
   # Instalando as dependências do projeto.
   $ npm install # ou yarn 
   # Inicie o cliente
-  $ npm run user01 # ou yarn user01
-```
+  $ npm run user01 # 
 
 ---
 <sup>Projeto desenvolvido com a tutoria de [Erick Wendel](https://github.com/ErickWendel).</sup>
