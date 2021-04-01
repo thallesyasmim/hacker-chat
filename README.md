@@ -46,16 +46,16 @@ Essa aplicação foi realizada durante a Semana **JS Expert 3.0**, com [Erick We
   # Servidor
   $ cd server
   # Instalando as dependências do projeto.
-  $ npm install # 
+  $ npm install 
   # Inicie o servidor
-  $ npm run dev # 
+  $ npm run dev 
 
   # Cliente
   $ cd client
   # Instalando as dependências do projeto.
   $ npm install # ou yarn 
   # Inicie o cliente
-  $ npm run user01 # 
+  $ npm run user01 
 ```
 
 <sup>Projeto desenvolvido com a tutoria de [Erick Wendel](https://github.com/ErickWendel).</sup>
