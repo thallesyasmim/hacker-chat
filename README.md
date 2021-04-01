@@ -56,8 +56,8 @@ Essa aplicação foi realizada durante a Semana **JS Expert 3.0**, com [Erick We
   $ npm install # ou yarn 
   # Inicie o cliente
   $ npm run user01 # 
+```
 
----
 <sup>Projeto desenvolvido com a tutoria de [Erick Wendel](https://github.com/ErickWendel).</sup>
 
 <h2>📱 Minhas redes sociais:</h2>
