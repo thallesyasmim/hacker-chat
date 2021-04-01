@@ -52,17 +52,16 @@ Essa aplicação foi realizada durante a Semana **JS Expert 3.0**, com [Erick We
   # Servidor
   $ cd server
   # Instalando as dependências do projeto.
-  $ yarn # ou npm install
-
+  $ npm install # ou yarn 
   # Inicie o servidor
-  $ yarn dev # ou npm run dev
+  $ npm run dev # ou yarn dev
 
   # Cliente
   $ cd client
   # Instalando as dependências do projeto.
-  $ yarn # ou npm install
+  $ npm install # ou yarn 
   # Inicie o cliente
-  $ yarn user01 # ou npm run user01
+  $ npm run user01 # ou yarn user01
 ```
 
 ---
