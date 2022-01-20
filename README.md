@@ -1,66 +1,66 @@
 <h1 align="center">
-    <br>Semana JS Expert 3.0<br/>
-    #alémdocrud
+    <br>JS Expert 3.0 week<br/>
+    #beyondcrud
 </h1>
 
 
 <p align="center">
-  <a href="#bookmark-sobre">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#boom-como-executar">Como Executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
+  <a href="#bookmark-sobre">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-tecnologias">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#boom-como-executar">How to Run</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-licença">License</a>
 </p>
 
 <p align="center">
-  <img alt="design do projeto" src="./.github/hacker_chat.PNG" />
+  <img alt="project design" src="./.github/hacker_chat.PNG" />
 <p>
 
-## :bookmark: Sobre
+## :bookmark: About
 
-O Hacker Chat é um chat multiplataforma construído usando linha de comando e JavaScript Avançado.
+Hacker Chat is a cross-platform chat built using command line and Advanced JavaScript.
   
-Essa aplicação foi realizada durante a Semana **JS Expert 3.0**, com [Erick Wendel](https://github.com/ErickWendel).
+This application was carried out during the **JS Expert 3.0** Week, with [Erick Wendel](https://github.com/ErickWendel).
 
-## :rocket: Tecnologias
+## :rocket: Technologies
 
 -  [Node.js](https://nodejs.org/en/)
 -  [Blessed](https://www.npmjs.com/package/blessed)
 
-## :boom: Como Executar
+## :boom: How to Run
 
-- ### **Pré-requisitos**
+- ### **Prerequisites**
 
-  - É **necessário** possuir o **[Node.js](https://nodejs.org/en/)** instalado no computador
-  - É **necessário** possuir o **[Git](https://git-scm.com/)** instalado e configurado no computador
-  - Também, é **preciso** ter um gerenciador de pacotes como o **[NPM](https://www.npmjs.com/)**.
+ - It is **necessary** to have **[Node.js](https://nodejs.org/en/)** installed on your computer
+ - It is **necessary** to have **[Git](https://git-scm.com/)** installed and configured on the computer
+ - Also, you **must** have a package manager like **[NPM](https://www.npmjs.com/)**.
 
-1. Faça um clone do repositório:
+1. Make a clone of the repository:
 
 ```sh
   $ git clone https://github.com/thallesyasmim/Hacker-Chat.git
 ```
 
-2. Executando a Aplicação:
+2. Running the Application:
 
 ```sh
-  # Servidor
+  # Server
   $ cd server
-  # Instalando as dependências do projeto.
+  # Installing project dependencies.
   $ npm install 
-  # Inicie o servidor
+  # Start the server
   $ npm run dev 
 
-  # Cliente
+  # Client
   $ cd client
-  # Instalando as dependências do projeto.
+  # Installing project dependencies.
   $ npm install # ou yarn 
-  # Inicie o cliente
+  # Start the client
   $ npm run user01 
 ```
 
-<sup>Projeto desenvolvido com a tutoria de [Erick Wendel](https://github.com/ErickWendel).</sup>
+<sup>Project developed with the mentorship of [Erick Wendel](https://github.com/ErickWendel).</sup>
 
-<h2>📱 Minhas redes sociais:</h2>
+<h2>📱 My social networks:</h2>
 
 <p align="center">
    <a href="https://github.com/thallesyasmim" target="_blank" >
@@ -79,4 +79,4 @@ Essa aplicação foi realizada durante a Semana **JS Expert 3.0**, com [Erick We
  </p>
 
 
-<h4>Feito com ❤ por Thalles Gabriel 🔥 </h4>
+<h4>Made with ❤ by Thalles Gabriel 🔥</h4>
