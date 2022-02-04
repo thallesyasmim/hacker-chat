@@ -1,5 +1,5 @@
 <h1 align="center">
-    <br>JS Expert 3.0 week<br/>
+    <br>Hacker Chat<br/>
     #beyondcrud
 </h1>
 
