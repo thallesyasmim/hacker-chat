@@ -1,6 +1,5 @@
 <h1 align="center">
     <br>Hacker Chat<br/>
-    #beyondcrud
 </h1>
 
 
