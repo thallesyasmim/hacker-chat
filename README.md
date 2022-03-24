@@ -57,8 +57,6 @@ This application was carried out during the **JS Expert 3.0** Week, with [Erick 
   $ npm run user01 
 ```
 
-<sup>Project developed with the mentorship of [Erick Wendel](https://github.com/ErickWendel).</sup>
-
 <h2>📱 My social networks:</h2>
 
 <p align="center">
