@@ -17,8 +17,6 @@
 ## :bookmark: About
 
 Hacker Chat is a cross-platform chat built using command line and Advanced JavaScript.
-  
-This application was carried out during the **JS Expert 3.0** Week, with [Erick Wendel](https://github.com/ErickWendel).
 
 ## :rocket: Technologies
 
