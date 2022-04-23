@@ -74,4 +74,4 @@ Hacker Chat is a cross-platform chat built using command line.
  </p>
 
 
-<h4>Made with ❤ by Thalles Gabriel 🔥</h4>
+<h4 align="center">Made with ❤ by Thalles Gabriel 🔥</h4>
