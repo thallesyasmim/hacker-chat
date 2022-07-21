@@ -6,7 +6,7 @@
 <p align="center">
   <a href="#bookmark">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#boom">How to Run</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#boom">How to Run</a>&nbsp;&nbsp;&nbsp;
 </p>
 
 <p align="center">
